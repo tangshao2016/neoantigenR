@@ -12,6 +12,7 @@ import("GenomicRanges")
 import("Gviz")
 import("BSgenome")
 import("BSgenome.Hsapiens.UCSC.hg19")
+import("rtracklayer")
 
 importFrom("grDevices", "dev.off", "pdf")
 importFrom("utils", "read.table", "write.table")
