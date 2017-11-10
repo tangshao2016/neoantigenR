@@ -126,14 +126,16 @@
   			}
   			grtrack.list=list()
   			m=1
-  			#chosen.column.indicies=c('V1','V4','V5',  'V9', 'V19', 'V7','V3', 'X3','X1','X4','X15')
-
+  			
   			if(dim(gene.intersection)[1]>2){# & length(intersect(chosen.column.indicies, colnames(gene.intersection)))==11){
 
-  				#gene.df=gene.intersection[,chosen.column.indicies]
-
-  			  gene.df=gene.intersection
-  			  colnames(gene.df)=c("chromosome","start","end", "pacBio", "width","strand","feature","gene","exon","transcript","symbol")
+  			  chosen.column.indicies=c(1,4,5,9,6,7,3,9,9,9,9)#c(1,4,5,9,19,7,3,12,10,13,24) #'V1','V4','V5',  'V9', 'V19', 'V7','V3', 'X3','X1','X4','X15')
+  				gene.df=gene.intersection[,chosen.column.indicies]
+  				colnames(gene.df)=c("chromosome", "start","end", "pacBio", "width","strand","feature","gene", "exon","transcript","symbol") # c("chromosome", "source", "start","end", "pacBio", "width","strand","feature","gene","exon","transcript","symbol")
+  				
+  				#gene.df=gene.intersection
+  				#colnames(gene.df)=c("chromosome", "source", "feature", "start","end", "pacBio", "width","strand","other","gene","exon","transcript","symbol") # c("chromosome", "source", "start","end", "pacBio", "width","strand","feature","gene","exon","transcript","symbol")
+  			 
   			  gene.df=gene.df[!duplicated(gene.df),]
   				gene.df=gene.df[which(gene.df$feature=="exon"),]
   				#gene.df$width=0
