@@ -6,7 +6,7 @@ Author: Shaojun Tang
 Maintainer: Shaojun Tang <tangshao2008@gmail.com>
 Description: neoantigen is a package to detect neoeptitopes from NGS sequencing data.
 License: GPL (>= 2)
-Depends: R (>= 3.4),seqinr,msa,GenomicRanges, BSgenome.Hsapiens.UCSC.hg19, Gviz, BSgenome, grDevices, utils, rtracklayer
+Depends: R (>= 3.5),seqinr,msa,GenomicRanges, BSgenome.Hsapiens.UCSC.hg19, Gviz, BSgenome, grDevices, utils, rtracklayer
 Suggests: knitr, rmarkdown, BiocStyle
 VignetteBuilder: knitr
 NeedsCompilation: no
