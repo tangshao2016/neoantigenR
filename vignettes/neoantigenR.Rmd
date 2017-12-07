@@ -88,20 +88,18 @@ Reference genome sequence alignment was performed using the Bowtie2 for aligning
   library(knitr)
 ```
 
-To identify differential spliced isoforms or gene with mutations, users need to upload a few files (The users could change the absolute path for these variables, or write these in the confiration file conf.R): including
+To identify differential spliced isoforms or gene with mutations, users need to upload a required file (The users could change the absolute path for these input files, or specify these in the confiration file conf.R): including
 
-* a protein annotation file (i.e. user could download the uniprot proteins)
-* a reference gene annotation (i.e. user could download the gencode human reference genes)
-* a predicted gene model file (such as the gff gene prediction from cufflinks)
-* a merged file of predicted and referene genes (by bedtools - intersect from the above two file)
+* a predicted gene model file (such as the gff gene prediction from cufflinks) [required]
+* a protein annotation file (i.e. user could download the uniprot proteins) [optional, uniprot human protein sequences were provided]
+* a reference gene annotation (i.e. user could download any gff/gff3 file) [optional, human GRCh38.90 from ensembl was provided]
 
 
 ```{r results='hide', message=FALSE, warning=FALSE}
 
-	protein.database.file.name		   =	"../inst/extdata/swissuniprots.fasta"
-	reference.gff.file						   =	"../inst/extdata/gencode.v19.annotation.gff3"
-	pacbio.gff							         =	"../inst/extdata/model.gff"
-	pacbio.gencode.overlapping.file	 =	"../inst/extdata/bedtool.intersect.overlaps.txt"
+	pacbio.gff							         =	"../inst/extdata/model.gff"    # required
+	protein.database.file.name		   =	"../inst/extdata/swissuniprots.fasta"    # optional
+	reference.gff.file						   =	"../inst/extdata/gencode.v19.annotation.gff3"    # optional
 	output.folder					         	 =	"../inst/extdata/"
 
 ```
@@ -125,7 +123,7 @@ After initialization, users will be able to see the information of the two manda
 
 ```{r warning=FALSE}
   kable(head(predicted.genes), caption = "predicted GTF gene models")
-  print(head(bedtools.merged.gene.annotations))
+  # print(head(bedtools.merged.gene.annotations))
 ```
 
 ## step-2. identify differentially spliced gene isoforms and transcripts based on given reference gene annotations
