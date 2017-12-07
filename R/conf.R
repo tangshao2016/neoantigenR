@@ -11,12 +11,12 @@
 	#' @examples
 	#' protein.database.file.name="swissuniprots.fasta"
 	#' @return the path for reference protein database file (Swiss-uniprot)
-	protein.database.file.name		   =	system.file("extdata", "swissuniprots.fasta", package="neoantigenR")
+	protein.database.file.name		   =	system.file("extdata", "uniprot-taxonomy%3A9606.fasta", package="neoantigenR")
 	#' the path for reference annotated gene database file
 	#' @examples
 	#' reference.gff.file="gencode.v19.annotation.gff3"
 	#' @return the path for reference annotated gene database file
-	reference.gff.file					     =	system.file("extdata", "gencode.v19.annotation.gff3", package="neoantigenR")
+	reference.gff.file					     =	system.file("extdata", "Homo_sapiens.GRCh38.90.ensembl.gff3", package="neoantigenR")
 	#' the predicted gff file
 	#' @examples
 	#' pacbio.gff="cufflinks.gff"
@@ -34,8 +34,8 @@
 	output.folder					         	 =	system.file("extdata", package="neoantigenR")
 
 
-	
-	
+
+
 	##-----------------------------------
 	## setup parameters
 	##-----------------------------------
